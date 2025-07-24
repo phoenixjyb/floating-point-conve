@@ -6,10 +6,11 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4338ca",
-  "orientation": "portrait-primary",
-  "categories": ["utilities", "productivity", "developer"],
-  "display_override": ["standalone", "minimal-ui"],
-  "prefer_related_applications": false,
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["utilities", "developer", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/icon.svg",
@@ -19,47 +20,36 @@
     },
     {
       "src": "/icon-192.png",
-      "sizes": "192x192", 
-      "type": "image/png",
-      "purpose": "any"
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
       "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png", 
-      "purpose": "any"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/screenshot-samsung.png",
-      "sizes": "1440x3120",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Samsung Galaxy S24 Ultra optimized view"
+      "type": "image/png"
     }
   ],
   "shortcuts": [
     {
-      "name": "Binary Converter",
-      "short_name": "Binary",
-      "description": "Convert binary to decimal",
-      "url": "/?format=binary",
-      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
-    },
-    {
-      "name": "Hex Converter", 
-      "short_name": "Hex",
-      "description": "Convert hex to decimal",
-      "url": "/?format=hex",
-      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
-    },
-    {
-      "name": "FP32 Format",
-      "short_name": "FP32", 
-      "description": "32-bit floating point converter",
-      "url": "/?format=fp32",
-      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
+      "name": "Quick Convert",
+      "short_name": "Convert",
+      "description": "Start a new conversion",
+      "url": "/",
+      "icons": [{ "src": "/icon.svg", "sizes": "96x96" }]
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "428x926",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile conversion interface"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
 }

@@ -1,7 +1,53 @@
-<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="192" height="192" rx="24" fill="#4338ca"/>
-  <rect x="24" y="24" width="144" height="144" rx="12" fill="white"/>
-  <text x="96" y="70" text-anchor="middle" font-family="monospace" font-size="24" fill="#4338ca" font-weight="bold">01</text>
-  <text x="96" y="100" text-anchor="middle" font-family="monospace" font-size="16" fill="#4338ca">HEX</text>
-  <text x="96" y="130" text-anchor="middle" font-family="monospace" font-size="20" fill="#4338ca">3.14</text>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:oklch(0.4 0.15 240);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:oklch(0.65 0.15 45);stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="256" cy="256" r="240" fill="url(#bgGradient)" filter="url(#shadow)"/>
+  
+  <!-- Binary representation -->
+  <g fill="white" font-family="JetBrains Mono, monospace" font-weight="500">
+    <!-- FP32 bit layout visualization -->
+    <text x="256" y="180" text-anchor="middle" font-size="24" opacity="0.9">FP32</text>
+    
+    <!-- Sign bit -->
+    <rect x="120" y="200" width="24" height="24" rx="4" fill="white" opacity="0.9"/>
+    <text x="132" y="216" text-anchor="middle" font-size="14" fill="oklch(0.4 0.15 240)">S</text>
+    
+    <!-- Exponent bits -->
+    <rect x="156" y="200" width="120" height="24" rx="4" fill="white" opacity="0.8"/>
+    <text x="216" y="216" text-anchor="middle" font-size="12" fill="oklch(0.4 0.15 240)">EXPONENT</text>
+    
+    <!-- Mantissa bits -->
+    <rect x="288" y="200" width="104" height="24" rx="4" fill="white" opacity="0.7"/>
+    <text x="340" y="216" text-anchor="middle" font-size="12" fill="oklch(0.4 0.15 240)">MANTISSA</text>
+  </g>
+  
+  <!-- Conversion arrows -->
+  <g stroke="white" stroke-width="3" fill="none" opacity="0.9">
+    <!-- Binary to Decimal arrow -->
+    <path d="M180 260 L220 300 L180 340" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Decimal to Hex arrow -->
+    <path d="M292 300 L332 260 L332 340" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Format indicators -->
+  <g fill="white" font-family="Inter, sans-serif" font-weight="600">
+    <text x="130" y="280" font-size="16" opacity="0.9">BIN</text>
+    <text x="246" y="320" text-anchor="middle" font-size="16" opacity="0.9">DEC</text>
+    <text x="350" y="280" font-size="16" opacity="0.9">HEX</text>
+  </g>
+  
+  <!-- Floating point formats indicator -->
+  <g fill="white" font-family="Inter, sans-serif" font-size="12" opacity="0.7">
+    <text x="256" y="380" text-anchor="middle">FP16 • BF16 • FP32 • FP64 • FP8 • NVFP4</text>
+  </g>
 </svg>
