@@ -1,0 +1,43 @@
+{
+  "name": "Data Conversion App",
+  "short_name": "DataConvert",
+  "description": "Convert between binary, hex, and decimal across multiple floating-point formats",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4338ca",
+  "orientation": "portrait-primary",
+  "categories": ["utilities", "productivity", "developer"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Binary Converter",
+      "short_name": "Binary",
+      "description": "Convert binary to decimal",
+      "url": "/?format=binary",
+      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Hex Converter", 
+      "short_name": "Hex",
+      "description": "Convert hex to decimal",
+      "url": "/?format=hex",
+      "icons": [{ "src": "/icon.svg", "sizes": "any" }]
+    }
+  ]
+}

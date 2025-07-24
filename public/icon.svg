@@ -1,0 +1,7 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" rx="24" fill="#4338ca"/>
+  <rect x="24" y="24" width="144" height="144" rx="12" fill="white"/>
+  <text x="96" y="70" text-anchor="middle" font-family="monospace" font-size="24" fill="#4338ca" font-weight="bold">01</text>
+  <text x="96" y="100" text-anchor="middle" font-family="monospace" font-size="16" fill="#4338ca">HEX</text>
+  <text x="96" y="130" text-anchor="middle" font-family="monospace" font-size="20" fill="#4338ca">3.14</text>
+</svg>

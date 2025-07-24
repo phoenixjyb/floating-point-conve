@@ -65,3 +65,36 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
 }
+
+/* Mobile optimizations */
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Improve tap targets for mobile */
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on inputs on iOS */
+  @supports (-webkit-touch-callout: none) {
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      font-size: 16px;
+    }
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better focus visibility on mobile */
+  .focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}

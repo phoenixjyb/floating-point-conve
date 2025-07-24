@@ -209,14 +209,17 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               placeholder={`Enter binary (max ${format.totalBits} bits)`}
               value={binaryInput}
               onChange={(e) => handleBinaryInputChange(e.target.value)}
-              className="font-mono"
+              className="font-mono text-base tap-target" 
               maxLength={format.totalBits}
+              inputMode="numeric"
+              pattern="[01]*"
             />
             {binaryResult && (
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => copyToClipboard(binaryResult, "Binary")}
+                className="tap-target"
               >
                 <Copy className="w-4 h-4" />
               </Button>
@@ -238,14 +241,17 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               placeholder={`Enter hex (max ${Math.ceil(format.totalBits / 4)} digits)`}
               value={hexInput}
               onChange={(e) => handleHexInputChange(e.target.value)}
-              className="font-mono"
+              className="font-mono text-base tap-target"
               maxLength={Math.ceil(format.totalBits / 4)}
+              inputMode="text"
+              pattern="[0-9A-Fa-f]*"
             />
             {hexResult && (
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => copyToClipboard(hexResult, "Hex")}
+                className="tap-target"
               >
                 <Copy className="w-4 h-4" />
               </Button>
@@ -267,13 +273,15 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               placeholder="Enter decimal number (or 'NaN', 'Infinity')"
               value={decimalInput}
               onChange={(e) => handleDecimalInputChange(e.target.value)}
-              className="font-mono"
+              className="font-mono text-base tap-target"
+              inputMode="decimal"
             />
             {decimalResult && (
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => copyToClipboard(decimalResult, "Decimal")}
+                className="tap-target"
               >
                 <Copy className="w-4 h-4" />
               </Button>
