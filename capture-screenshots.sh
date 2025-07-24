@@ -33,10 +33,29 @@ if command -v adb &> /dev/null; then
         
     else
         echo "⚠️  No Android device connected via ADB"
-        echo "   Connect device and enable USB debugging"
+        echo ""
+        echo "📋 To connect your Android device:"
+        echo "   1. Enable Developer Options:"
+        echo "      Settings → About Phone → Tap 'Build Number' 7 times"
+        echo ""
+        echo "   2. Enable USB Debugging:"
+        echo "      Settings → Developer Options → USB Debugging"
+        echo ""
+        echo "   3. Connect via USB and allow debugging when prompted"
+        echo ""
+        echo "   4. Verify connection: adb devices"
+        echo ""
+        echo "   💡 See ADB_SETUP.md for detailed instructions"
     fi
 else
     echo "⚠️  ADB not found - install Android SDK Platform Tools"
+    echo ""
+    echo "📋 Quick ADB Installation:"
+    echo "   1. Install Android Studio or SDK Command Line Tools"
+    echo "   2. Add to your PATH: export PATH=\"\$ANDROID_HOME/platform-tools:\$PATH\""
+    echo "   3. Restart terminal and try again"
+    echo ""
+    echo "   💡 See ADB_SETUP.md for detailed instructions"
 fi
 
 echo ""
