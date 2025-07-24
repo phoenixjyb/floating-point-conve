@@ -17,7 +17,7 @@ function App() {
   return (
     <AdaptiveLayout>
       <PWAInstall />
-      <div className="container mx-auto px-4 py-6 max-w-6xl keyboard-adjust">
+      <div className="container mx-auto py-6 max-w-6xl keyboard-adjust">
         <AdaptiveHeader 
           title="Cool FP Converter"
           subtitle="Convert between binary, hex, and decimal across multiple floating-point formats"
