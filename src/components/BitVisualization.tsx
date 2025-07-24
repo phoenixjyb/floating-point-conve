@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { type FloatFormat, getBitBreakdown } from "@/lib/floatingPoint";
+import { type FloatFormat, getBitBreakdown, binaryToHex } from "@/lib/floatingPoint";
 
 interface BitVisualizationProps {
   binary: string;
@@ -12,6 +12,7 @@ export function BitVisualization({ binary, format }: BitVisualizationProps) {
   
   const paddedBinary = binary.padStart(format.totalBits, '0').slice(-format.totalBits);
   const breakdown = getBitBreakdown(paddedBinary, format);
+  const hexValue = binaryToHex(paddedBinary);
   
   return (
     <Card className="p-6">
@@ -96,11 +97,25 @@ export function BitVisualization({ binary, format }: BitVisualizationProps) {
         </div>
         
         {/* Format info */}
-        <div className="p-3 bg-muted rounded-lg">
-          <div className="text-sm text-muted-foreground">
-            <strong>{format.name}</strong> - {format.description}
-            <br />
-            Total bits: {format.totalBits}, Bias: {format.bias}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="p-3 bg-muted rounded-lg">
+            <div className="text-sm">
+              <div className="font-semibold mb-2">Format Information</div>
+              <div className="text-muted-foreground">
+                <strong>{format.name}</strong> - {format.description}
+                <br />
+                Total bits: {format.totalBits}, Bias: {format.bias}
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
+            <div className="text-sm">
+              <div className="font-semibold mb-2">Hexadecimal Representation</div>
+              <div className="font-mono text-lg text-accent-foreground">
+                0x{hexValue}
+              </div>
+            </div>
           </div>
         </div>
       </div>

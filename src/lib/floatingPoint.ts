@@ -194,6 +194,45 @@ export function isValidBinary(input: string): boolean {
   return /^[01]*$/.test(input);
 }
 
+export function isValidHex(input: string): boolean {
+  return /^[0-9A-Fa-f]*$/.test(input);
+}
+
+export function binaryToHex(binary: string): string {
+  // Pad to multiple of 4 bits
+  const paddedBinary = binary.padStart(Math.ceil(binary.length / 4) * 4, '0');
+  let hex = '';
+  
+  for (let i = 0; i < paddedBinary.length; i += 4) {
+    const chunk = paddedBinary.slice(i, i + 4);
+    hex += parseInt(chunk, 2).toString(16).toUpperCase();
+  }
+  
+  return hex;
+}
+
+export function hexToBinary(hex: string, totalBits: number): string {
+  let binary = '';
+  
+  for (let i = 0; i < hex.length; i++) {
+    const digit = parseInt(hex[i], 16);
+    binary += digit.toString(2).padStart(4, '0');
+  }
+  
+  // Pad or truncate to correct length
+  return binary.padStart(totalBits, '0').slice(-totalBits);
+}
+
+export function hexToDecimal(hex: string, format: FloatFormat): number {
+  const binary = hexToBinary(hex, format.totalBits);
+  return binaryToDecimal(binary, format);
+}
+
+export function decimalToHex(decimal: number, format: FloatFormat): string {
+  const binary = decimalToBinary(decimal, format);
+  return binaryToHex(binary);
+}
+
 export function formatDecimal(value: number): string {
   if (isNaN(value)) return "NaN";
   if (!isFinite(value)) return value > 0 ? "+Infinity" : "-Infinity";
