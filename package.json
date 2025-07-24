@@ -78,7 +78,7 @@
     "tailwindcss": "^4.1.11",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
-    "vite-plugin-pwa": "^0.16.4"
+    "vite-plugin-pwa": "^1.0.1"
   },
   "optionalDependencies": {
     "@capacitor/android": "^5.0.0",
