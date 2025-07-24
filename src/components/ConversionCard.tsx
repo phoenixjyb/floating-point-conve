@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -171,6 +171,18 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
       handleBinaryInputChange(binaryResult);
     }
   }, [binaryResult, hexResult, decimalResult, handleBinaryInputChange]);
+
+  // Auto-update conversions when format changes
+  useEffect(() => {
+    // Re-convert if we have any input data
+    if (binaryInput) {
+      handleBinaryInputChange(binaryInput);
+    } else if (hexInput) {
+      handleHexInputChange(hexInput);
+    } else if (decimalInput) {
+      handleDecimalInputChange(decimalInput);
+    }
+  }, [format]); // Trigger when format changes
 
   return (
     <Card>
