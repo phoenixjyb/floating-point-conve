@@ -34,16 +34,19 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
   const [binaryError, setBinaryError] = useState("");
   const [hexError, setHexError] = useState("");
   const [decimalError, setDecimalError] = useState("");
+  const [activeInput, setActiveInput] = useState<'binary' | 'hex' | 'decimal' | null>(null);
 
   const handleBinaryInputChange = useCallback((value: string) => {
     setBinaryInput(value);
     setBinaryError("");
+    setActiveInput('binary');
     
     if (!value.trim()) {
       setBinaryResult("");
       setHexResult("");
       setDecimalResult("");
       onBinaryChange("");
+      setActiveInput(null);
       return;
     }
     
@@ -78,12 +81,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
   const handleHexInputChange = useCallback((value: string) => {
     setHexInput(value);
     setHexError("");
+    setActiveInput('hex');
     
     if (!value.trim()) {
       setBinaryResult("");
       setHexResult("");
       setDecimalResult("");
       onBinaryChange("");
+      setActiveInput(null);
       return;
     }
     
@@ -117,12 +122,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
   const handleDecimalInputChange = useCallback((value: string) => {
     setDecimalInput(value);
     setDecimalError("");
+    setActiveInput('decimal');
     
     if (!value.trim()) {
       setBinaryResult("");
       setHexResult("");
       setDecimalResult("");
       onBinaryChange("");
+      setActiveInput(null);
       return;
     }
     
@@ -203,14 +210,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
       <CardContent className="space-y-6">
         {/* Binary Input */}
         <div className="space-y-2">
-          <Label htmlFor="binary-input" className="text-samsung-optimized font-medium">Binary Input</Label>
+          <Label htmlFor="binary-input" className={`text-samsung-optimized font-medium ${activeInput === 'binary' || activeInput === null ? 'text-foreground' : 'text-muted-foreground italic'}`}>Binary Input</Label>
           <div className="flex gap-3">
             <Input
               id="binary-input"
               placeholder={`Enter binary (max ${format.totalBits} bits)`}
               value={binaryInput}
               onChange={(e) => handleBinaryInputChange(e.target.value)}
-              className="font-mono text-samsung-optimized tap-target button-enhanced" 
+              className={`font-mono text-samsung-optimized tap-target button-enhanced ${activeInput === 'binary' || activeInput === null ? 'text-foreground' : 'text-muted-foreground italic'}`}
               maxLength={format.totalBits}
               inputMode="numeric"
               pattern="[01]*"
@@ -235,14 +242,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
 
         {/* Hexadecimal Input */}
         <div className="space-y-2">
-          <Label htmlFor="hex-input" className="text-samsung-optimized font-medium">Hexadecimal Input</Label>
+          <Label htmlFor="hex-input" className={`text-samsung-optimized font-medium ${activeInput === 'hex' || activeInput === null ? 'text-foreground' : 'text-muted-foreground italic'}`}>Hexadecimal Input</Label>
           <div className="flex gap-3">
             <Input
               id="hex-input"
               placeholder={`Enter hex (max ${Math.ceil(format.totalBits / 4)} digits)`}
               value={hexInput}
               onChange={(e) => handleHexInputChange(e.target.value)}
-              className="font-mono text-samsung-optimized tap-target button-enhanced"
+              className={`font-mono text-samsung-optimized tap-target button-enhanced ${activeInput === 'hex' || activeInput === null ? 'text-foreground' : 'text-muted-foreground italic'}`}
               maxLength={Math.ceil(format.totalBits / 4)}
               inputMode="text"
               pattern="[0-9A-Fa-f]*"
@@ -267,14 +274,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
 
         {/* Decimal Input */}
         <div className="space-y-2">
-          <Label htmlFor="decimal-input" className="text-samsung-optimized font-medium">Decimal Input</Label>
+          <Label htmlFor="decimal-input" className={`text-samsung-optimized font-medium ${activeInput === 'decimal' || activeInput === null ? 'text-foreground' : 'text-muted-foreground italic'}`}>Decimal Input</Label>
           <div className="flex gap-3">
             <Input
               id="decimal-input"
               placeholder="Enter decimal number (or 'NaN', 'Infinity')"
               value={decimalInput}
               onChange={(e) => handleDecimalInputChange(e.target.value)}
-              className="font-mono text-samsung-optimized tap-target button-enhanced"
+              className={`font-mono text-samsung-optimized tap-target button-enhanced ${activeInput === 'decimal' || activeInput === null ? 'text-foreground' : 'text-muted-foreground italic'}`}
               inputMode="decimal"
             />
             {decimalResult && (
@@ -301,23 +308,23 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
             <div className="text-samsung-optimized font-semibold">Conversion Results:</div>
             
             {binaryResult && (
-              <div className="p-4 bg-secondary rounded-lg">
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                 <div className="text-sm text-muted-foreground mb-2">Binary:</div>
-                <div className="font-mono text-samsung-large break-all">{binaryResult}</div>
+                <div className={`font-mono text-samsung-large break-all ${activeInput === 'binary' ? 'text-gray-600 italic' : 'text-gray-900'}`}>{binaryResult}</div>
               </div>
             )}
             
             {hexResult && (
-              <div className="p-4 bg-muted rounded-lg">
+              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <div className="text-sm text-muted-foreground mb-2">Hexadecimal:</div>
-                <div className="font-mono text-samsung-large">{hexResult}</div>
+                <div className={`font-mono text-samsung-large ${activeInput === 'hex' ? 'text-gray-600 italic' : 'text-gray-900'}`}>{hexResult}</div>
               </div>
             )}
             
             {decimalResult && (
-              <div className="p-4 bg-accent/10 rounded-lg border border-accent/20">
+              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                 <div className="text-sm text-muted-foreground mb-2">Decimal:</div>
-                <div className="font-mono text-samsung-large font-semibold text-accent-foreground">{decimalResult}</div>
+                <div className={`font-mono text-samsung-large ${activeInput === 'decimal' ? 'text-gray-600 italic' : 'text-gray-900'}`}>{decimalResult}</div>
               </div>
             )}
           </div>

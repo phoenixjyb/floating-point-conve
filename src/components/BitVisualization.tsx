@@ -109,10 +109,10 @@ export function BitVisualization({ binary, format }: BitVisualizationProps) {
             </div>
           </div>
           
-          <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
+          <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
             <div className="text-sm">
               <div className="font-semibold mb-2">Hexadecimal Representation</div>
-              <div className="font-mono text-lg text-accent-foreground">
+              <div className="font-mono text-lg text-gray-900">
                 0x{hexValue}
               </div>
             </div>

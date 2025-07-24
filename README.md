@@ -6,6 +6,29 @@
   <em>Professional floating-point conversion and analysis tool</em>
 </div>
 
+## 📱 **Try It Now - Android APK Available!**
+
+<div align="center">
+  
+### 🚀 **Ready to Use - No Installation Required**
+
+[![Download APK](https://img.shields.io/badge/📱_Download_APK-4.4MB-brightgreen?style=for-the-badge&logo=android)](https://github.com/phoenixjyb/floating-point-conve/raw/main/android/app/build/outputs/apk/release/app-release.apk)
+[![Web App](https://img.shields.io/badge/🌐_Try_Web_App-Live_Demo-blue?style=for-the-badge&logo=googlechrome)](your-web-app-url)
+
+**Latest Version:** v1.0.0 | **Size:** 4.4MB | **Android 7.0+**
+
+</div>
+
+### 📲 **Quick Install Instructions**
+1. **Download APK**: Click the button above or download from [Releases](https://github.com/phoenixjyb/floating-point-conve/releases)
+2. **Enable Unknown Sources**: Settings → Security → Unknown Sources (if needed)
+3. **Install**: Open the downloaded APK file and follow the prompts
+4. **Launch**: Find "Cool FP Converter" in your app drawer
+
+> 💡 **Tip**: The app works completely offline once installed - perfect for engineering work anywhere!
+
+---
+
 A precision-engineered tool for converting between binary, hexadecimal, and decimal representations across multiple floating-point formats. Built for engineers, researchers, and students who need accurate floating-point analysis and IEEE 754 visualization.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
@@ -70,12 +93,30 @@ A precision-engineered tool for converting between binary, hexadecimal, and deci
   <p><em>Educational visualization showing sign, exponent, and mantissa components</em></p>
 </div>
 
-## �🚀 Quick Start
+## 🚀 Quick Start
 
-### Web Application
-Visit the live application at: [Your deployment URL]
+### 📱 **Android APK (Recommended)**
+**Get started in 30 seconds!**
 
-### Local Development
+```bash
+# Method 1: Direct download
+wget https://github.com/phoenixjyb/floating-point-conve/raw/main/android/app/build/outputs/apk/release/app-release.apk
+
+# Method 2: Install via ADB (for developers)
+adb install app-release.apk
+```
+
+**✅ Features included:**
+- ✨ **Offline capable** - works without internet
+- 🔋 **Battery optimized** - minimal resource usage
+- 📱 **Touch-friendly** - designed for mobile use
+- 🚀 **Fast startup** - launches in under 2 seconds
+- 💾 **Small footprint** - only 4.4MB installed
+
+### 🌐 **Web Application**
+Try instantly in your browser: [Live Demo](your-deployment-url)
+
+### 🛠️ **Local Development**
 ```bash
 # Clone the repository
 git clone https://github.com/phoenixjyb/floating-point-conve.git
@@ -88,29 +129,21 @@ npm install
 npm run dev
 ```
 
-### Android Installation
-Download and install the APK directly:
-```bash
-# Download from releases or build locally
-wget https://github.com/phoenixjyb/floating-point-conve/raw/main/floating-point-converter.apk
-
-# Install via ADB
-adb install floating-point-converter.apk
-```
-
 ## 📋 System Requirements
 
-### Web Browser
+### 📱 **Android APK**
+- **Android 7.0+** (API level 24+)
+- **4.4MB** storage space (installed size)
+- **ARM64/ARM32/x86_64** architecture support
+- **No additional permissions** required
+- **Offline functionality** - works without internet
+
+### 🌐 **Web Browser**
 - **Modern browsers** with ES2020 support
 - **JavaScript enabled**
 - **Local storage** for PWA functionality
 
-### Android APK
-- **Android 7.0+** (API level 24+)
-- **3MB** free storage space
-- **ARM64/x86_64** architecture support
-
-### Development
+### 🛠️ **Development**
 - **Node.js 18+**
 - **npm 8+** or **yarn 1.22+**
 - **Android Studio** (for Android builds)
@@ -327,6 +360,32 @@ cd android
 ### PWA Installation
 The app automatically prompts for installation when accessed via HTTPS on supported devices.
 
+## 🔧 APK Installation Troubleshooting
+
+### Common Issues & Solutions
+
+**"Install blocked" or "Unknown sources"**
+1. Go to **Settings** → **Security** → **Unknown Sources**
+2. Enable **"Allow installation of apps from unknown sources"**
+3. Try installing the APK again
+
+**"App not installed" error**
+1. Make sure you have **4.4MB+ free space**
+2. Uninstall any previous versions
+3. Download the APK again (file might be corrupted)
+
+**Can't find the downloaded APK**
+1. Check your **Downloads** folder
+2. Use a file manager app to locate `app-release.apk`
+3. Tap the file to install
+
+**App crashes on startup**
+1. Make sure your device runs **Android 7.0+**
+2. Restart your device and try again
+3. Clear the app data: Settings → Apps → Cool FP Converter → Storage → Clear Data
+
+**Need help?** [Open an issue](https://github.com/phoenixjyb/floating-point-conve/issues) or email [yanbo.jia@cantab.net](mailto:yanbo.jia@cantab.net)
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
@@ -368,6 +427,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for the engineering community**
 
-[🌐 Live Demo](your-demo-url) • [📱 Download APK](https://github.com/phoenixjyb/floating-point-conve/raw/main/floating-point-converter.apk) • [📚 Documentation](your-docs-url)
+### 📱 **Download Options**
+
+[![Android APK](https://img.shields.io/badge/📱_Android_APK-4.4MB-green?style=for-the-badge&logo=android&logoColor=white)](https://github.com/phoenixjyb/floating-point-conve/raw/main/android/app/build/outputs/apk/release/app-release.apk)
+[![Web App](https://img.shields.io/badge/🌐_Web_App-Online-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](your-demo-url)
+[![GitHub](https://img.shields.io/badge/📚_Source_Code-GitHub-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/phoenixjyb/floating-point-conve)
+
+**Latest Release:** v1.0.0 | **Compatible:** Android 7.0+ | **Size:** 4.4MB
 
 </div>
