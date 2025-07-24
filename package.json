@@ -9,6 +9,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "build:android": "npm run build && npx cap sync android && npx cap open android",
+    "build:android-apk": "npm run build && npx cap sync android && cd android && ./gradlew assembleRelease",
+    "build:android-aab": "npm run build && npx cap sync android && cd android && ./gradlew bundleRelease",
+    "build:android-debug": "npm run build && npx cap sync android && cd android && ./gradlew assembleDebug",
+    "build:android-all": "npm run build:android-apk && npm run build:android-aab",
     "cap:add": "npx cap add",
     "cap:sync": "npx cap sync",
     "cap:run": "npx cap run"
