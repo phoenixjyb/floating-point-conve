@@ -13,7 +13,7 @@
 ### 🚀 **Ready to Use - No Installation Required**
 
 [![Download APK](https://img.shields.io/badge/📱_Download_APK-4.4MB-brightgreen?style=for-the-badge&logo=android)](https://github.com/phoenixjyb/floating-point-conve/raw/main/android/app/build/outputs/apk/release/app-release.apk)
-[![Web App](https://img.shields.io/badge/🌐_Try_Web_App-Live_Demo-blue?style=for-the-badge&logo=googlechrome)](your-web-app-url)
+[![Web App](https://img.shields.io/badge/🌐_Try_Web_App-Live_Demo-blue?style=for-the-badge&logo=googlechrome)](https://phoenixjyb.github.io/floating-point-conve)
 
 **Latest Version:** v1.0.0 | **Size:** 4.4MB | **Android 7.0+**
 
@@ -113,8 +113,50 @@ adb install app-release.apk
 - 🚀 **Fast startup** - launches in under 2 seconds
 - 💾 **Small footprint** - only 4.4MB installed
 
-### 🌐 **Web Application**
-Try instantly in your browser: [Live Demo](your-deployment-url)
+### 🌐 **Web Application - No Download Required!**
+
+<div align="center">
+
+**🚀 [Try Live Web App](https://phoenixjyb.github.io/floating-point-conve)**
+
+*Instant access - works on any device with a modern browser*
+
+</div>
+
+#### 🎯 **Why Choose Web Version?**
+- ✅ **No Installation** - runs instantly in your browser
+- ✅ **Cross-Platform** - works on Windows, Mac, Linux, iOS, Android
+- ✅ **Always Updated** - automatically gets latest features
+- ✅ **PWA Support** - can be installed as desktop/mobile app
+- ✅ **Shareable** - send links to colleagues instantly
+- ✅ **Responsive Design** - optimized for phones, tablets, and desktops
+
+#### 🚀 **Quick Start Options**
+
+1. **🌍 Online Use**: [Open Web App](https://phoenixjyb.github.io/floating-point-conve) - No download required
+2. **💻 Install as App**: Click "Install" when prompted (PWA support)
+3. **🔗 Bookmark**: Add to favorites for instant access
+4. **📱 Add to Home Screen**: iOS/Android - use "Add to Home Screen" option
+
+#### 🏠 **Self-Hosting**
+
+Deploy your own instance in minutes:
+
+```bash
+# Quick deployment
+git clone https://github.com/phoenixjyb/floating-point-conve.git
+cd floating-point-conve
+npm install && npm run build
+
+# Upload 'dist/' folder to any web server
+# Works with: Netlify, Vercel, GitHub Pages, Apache, Nginx, etc.
+```
+
+**🚀 Easy Deploy Services:**
+- **GitHub Pages**: Automatic deployment on push to main
+- **Netlify**: `netlify deploy --prod --dir=dist`  
+- **Vercel**: `vercel --prod`
+- **Firebase**: `firebase deploy`
 
 ### 🛠️ **Local Development**
 ```bash
