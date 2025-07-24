@@ -168,3 +168,190 @@
     margin-bottom: env(keyboard-inset-height, 0px);
   }
 }
+
+/* ===================================
+   ADAPTIVE LAYOUT SYSTEM
+   Device-specific optimizations
+   ================================= */
+
+/* Samsung S24 Ultra Specific Optimizations */
+.samsung-s24-optimized {
+  /* S24 Ultra has specific safe areas and curved edges */
+  --s24-safe-top: 44px;
+  --s24-safe-bottom: 34px;
+  --s24-edge-margin: 8px;
+}
+
+.samsung-s24-container {
+  padding: 0 var(--s24-edge-margin);
+  max-width: 932px; /* S24 Ultra logical width */
+  margin: 0 auto;
+}
+
+.samsung-s24-header {
+  padding-top: 12px;
+  margin-bottom: 28px;
+}
+
+.samsung-s24-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.samsung-s24-subtitle {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.space-y-samsung-optimized > * + * {
+  margin-top: 28px;
+}
+
+/* Android Tablet Layout */
+.android-tablet-layout {
+  --tablet-max-width: 1200px;
+  --tablet-margin: 32px;
+}
+
+.android-tablet-container {
+  max-width: var(--tablet-max-width);
+  margin: 0 auto;
+  padding: 0 var(--tablet-margin);
+}
+
+.android-tablet-header {
+  padding-top: 20px;
+  margin-bottom: 40px;
+}
+
+/* Android Phone Layout (Universal) */
+.android-phone-layout {
+  --phone-margin: 16px;
+}
+
+.android-phone-container {
+  padding: 0 var(--phone-margin);
+  max-width: 100%;
+}
+
+/* Screen size specific adjustments */
+.screen-small .android-phone-container {
+  --phone-margin: 12px;
+}
+
+.screen-large .android-phone-container {
+  --phone-margin: 20px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.screen-xlarge .android-phone-container {
+  --phone-margin: 24px;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+/* Foldable Device Layout */
+.foldable-layout {
+  --foldable-margin: 20px;
+}
+
+.foldable-container {
+  padding: 0 var(--foldable-margin);
+  max-width: 100%;
+}
+
+.foldable-landscape .foldable-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.foldable-landscape .foldable-header {
+  grid-column: 1 / -1;
+  margin-bottom: 24px;
+}
+
+/* iOS Layout */
+.ios-layout {
+  --ios-margin: 20px;
+}
+
+.ios-container {
+  padding: 0 var(--ios-margin);
+  max-width: 100%;
+}
+
+.ios-tablet .ios-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Desktop Layout */
+.desktop-layout {
+  --desktop-max-width: 1200px;
+  --desktop-margin: 24px;
+}
+
+.desktop-container {
+  max-width: var(--desktop-max-width);
+  margin: 0 auto;
+  padding: var(--desktop-margin);
+}
+
+/* Safe area utilities for all devices */
+.h-safe-top {
+  height: env(safe-area-inset-top, 24px);
+}
+
+.h-safe-bottom {
+  height: env(safe-area-inset-bottom, 24px);
+}
+
+/* Touch optimization for all mobile devices */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.touch-manipulation input,
+.touch-manipulation textarea,
+.touch-manipulation button {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* Responsive typography system */
+@media screen and (max-width: 360px) {
+  .screen-small h1 { font-size: 1.5rem; }
+  .screen-small .text-base { font-size: 0.875rem; }
+}
+
+@media screen and (min-width: 768px) {
+  .screen-large h1 { font-size: 2.5rem; }
+  .screen-xlarge h1 { font-size: 3rem; }
+}
+
+/* Landscape orientation adjustments */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .android-phone-container,
+  .foldable-container:not(.foldable-landscape .foldable-container) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  
+  .samsung-s24-header,
+  .android-tablet-header,
+  .foldable-header {
+    margin-bottom: 16px;
+  }
+}
