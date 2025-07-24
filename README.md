@@ -37,7 +37,34 @@ A precision-engineered tool for converting between binary, hexadecimal, and deci
 - **Responsive design** optimized for mobile and desktop
 - **Touch-friendly** interface with accessibility support
 
-## 🚀 Quick Start
+## � Visual Showcase
+
+### 🖥️ **Desktop Web Interface**
+<div align="center">
+  <img src="docs/screenshots/web-desktop.png" alt="Desktop Web Interface" width="800"/>
+  <p><em>Clean, professional interface optimized for desktop workflows</em></p>
+</div>
+
+### 📱 **Android Mobile App**
+<div align="center">
+  <img src="docs/screenshots/android-main.png" alt="Android Main Interface" width="300"/>
+  <img src="docs/screenshots/android-visualization.png" alt="Bit Visualization" width="300"/>
+  <p><em>Native Android app with intuitive touch interface and bit visualization</em></p>
+</div>
+
+### 🎬 **Real-Time Conversion Demo**
+<div align="center">
+  <img src="docs/screenshots/conversion-demo.gif" alt="Real-time Conversion Demo" width="600"/>
+  <p><em>Live demonstration of real-time floating-point conversion</em></p>
+</div>
+
+### 🔍 **Bit-Level Analysis**
+<div align="center">
+  <img src="docs/screenshots/bit-breakdown.png" alt="IEEE 754 Bit Breakdown" width="700"/>
+  <p><em>Educational visualization showing sign, exponent, and mantissa components</em></p>
+</div>
+
+## �🚀 Quick Start
 
 ### Web Application
 Visit the live application at: [Your deployment URL]

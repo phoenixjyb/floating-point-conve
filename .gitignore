@@ -34,6 +34,9 @@ android/app/src/release/
 # Android local configuration
 android/local.properties
 
+# Screenshot placeholders (replace with actual screenshots)
+docs/screenshots/*.placeholder
+
 .env
 **/agent-eval-report*
 packages
