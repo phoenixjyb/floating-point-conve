@@ -24,6 +24,16 @@ dist-ssr
 *.sln
 *.sw?
 
+# Android keystore files (DO NOT COMMIT TO PUBLIC REPOS)
+*.keystore
+*.jks
+android/app/google-services.json
+android/app/src/debug/
+android/app/src/release/
+
+# Android local configuration
+android/local.properties
+
 .env
 **/agent-eval-report*
 packages
