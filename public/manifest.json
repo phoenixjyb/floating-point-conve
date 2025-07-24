@@ -1,6 +1,6 @@
 {
-  "name": "Data Conversion App",
-  "short_name": "DataConvert",
+  "name": "Cool FP Converter",
+  "short_name": "CoolFP",
   "description": "Convert between binary, hex, and decimal across multiple floating-point formats",
   "start_url": "/",
   "display": "standalone",

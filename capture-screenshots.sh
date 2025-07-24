@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Screenshot Capture Script for Floating Point Converter
+# Screenshot Capture Script for Cool FP Converter
 # Usage: ./capture-screenshots.sh
 
-echo "📸 Floating Point Converter - Screenshot Capture Script"
+echo "📸 Cool FP Converter - Screenshot Capture Script"
 echo "======================================================"
 
 # Check if ADB is available for Android screenshots

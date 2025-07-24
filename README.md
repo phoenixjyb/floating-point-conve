@@ -1,7 +1,7 @@
-# 🔢 Floating Point Converter
+# 🔢 Cool FP Converter
 
 <div align="center">
-  <img src="docs/screenshots/app-icon.png" alt="Floating Point Converter Icon" width="120" height="120"/>
+  <img src="docs/screenshots/app-icon.png" alt="Cool FP Converter Icon" width="120" height="120"/>
   <br/>
   <em>Professional floating-point conversion and analysis tool</em>
 </div>

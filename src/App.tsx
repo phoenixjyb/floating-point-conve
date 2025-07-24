@@ -18,7 +18,7 @@ function App() {
       <PWAInstall />
       <div className="container mx-auto px-4 py-6 max-w-6xl keyboard-adjust">
         <header className="text-center mb-6">
-          <h1 className="text-samsung-xl font-bold mb-2">Data Conversion App</h1>
+          <h1 className="text-samsung-xl font-bold mb-2">Cool FP Converter</h1>
           <p className="text-samsung-optimized text-muted-foreground">
             Convert between binary, hex, and decimal across multiple floating-point formats
           </p>
