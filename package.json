@@ -74,6 +74,6 @@
   "optionalDependencies": {
     "@capacitor/android": "^5.0.0",
     "@capacitor/cli": "^5.0.0",
-    "@capacitor/core": "^5.0.0"
+    "@capacitor/core": "^7.4.2"
   }
 }
