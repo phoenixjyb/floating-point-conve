@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { FormatSelector } from "@/components/FormatSelector";
 import { ConversionCard } from "@/components/ConversionCard";
 import { BitVisualization } from "@/components/BitVisualization";
+import { ValueRange } from "@/components/ValueRange";
 import { FLOAT_FORMATS } from "@/lib/floatingPoint";
 
 function App() {
@@ -26,6 +27,8 @@ function App() {
             selectedFormat={selectedFormat}
             onFormatChange={setSelectedFormat}
           />
+          
+          <ValueRange format={format} />
           
           <ConversionCard 
             format={format}

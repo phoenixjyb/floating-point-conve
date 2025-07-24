@@ -6,6 +6,14 @@ export interface FloatFormat {
   mantissaBits: number;
   bias: number;
   description: string;
+  range: {
+    min: number;
+    max: number;
+    minNormal: number;
+    maxNormal: number;
+    smallestPositive: number;
+    precision: number;
+  };
 }
 
 export const FLOAT_FORMATS: Record<string, FloatFormat> = {
@@ -16,7 +24,15 @@ export const FLOAT_FORMATS: Record<string, FloatFormat> = {
     exponentBits: 8,
     mantissaBits: 23,
     bias: 127,
-    description: "32-bit IEEE 754 single precision"
+    description: "32-bit IEEE 754 single precision",
+    range: {
+      min: -3.4028235e38,
+      max: 3.4028235e38,
+      minNormal: 1.1754944e-38,
+      maxNormal: 3.4028235e38,
+      smallestPositive: 1.4012985e-45,
+      precision: 7 // decimal digits
+    }
   },
   fp64: {
     name: "FP64 (IEEE 754 Double)",
@@ -25,7 +41,15 @@ export const FLOAT_FORMATS: Record<string, FloatFormat> = {
     exponentBits: 11,
     mantissaBits: 52,
     bias: 1023,
-    description: "64-bit IEEE 754 double precision"
+    description: "64-bit IEEE 754 double precision",
+    range: {
+      min: -1.7976931348623157e308,
+      max: 1.7976931348623157e308,
+      minNormal: 2.2250738585072014e-308,
+      maxNormal: 1.7976931348623157e308,
+      smallestPositive: 4.9406564584124654e-324,
+      precision: 15 // decimal digits
+    }
   },
   fp16: {
     name: "FP16 (IEEE 754 Half)",
@@ -34,7 +58,15 @@ export const FLOAT_FORMATS: Record<string, FloatFormat> = {
     exponentBits: 5,
     mantissaBits: 10,
     bias: 15,
-    description: "16-bit IEEE 754 half precision"
+    description: "16-bit IEEE 754 half precision",
+    range: {
+      min: -65504,
+      max: 65504,
+      minNormal: 6.103515625e-5,
+      maxNormal: 65504,
+      smallestPositive: 5.9604644775390625e-8,
+      precision: 3 // decimal digits
+    }
   },
   bf16: {
     name: "BF16 (Brain Float)",
@@ -43,7 +75,15 @@ export const FLOAT_FORMATS: Record<string, FloatFormat> = {
     exponentBits: 8,
     mantissaBits: 7,
     bias: 127,
-    description: "16-bit Google Brain floating point"
+    description: "16-bit Google Brain floating point",
+    range: {
+      min: -3.38953139e38,
+      max: 3.38953139e38,
+      minNormal: 1.1754944e-38,
+      maxNormal: 3.38953139e38,
+      smallestPositive: 9.183549615799121e-41,
+      precision: 2 // decimal digits
+    }
   },
   fp8: {
     name: "FP8 (E4M3)",
@@ -52,7 +92,15 @@ export const FLOAT_FORMATS: Record<string, FloatFormat> = {
     exponentBits: 4,
     mantissaBits: 3,
     bias: 7,
-    description: "8-bit floating point (4-bit exp, 3-bit mantissa)"
+    description: "8-bit floating point (4-bit exp, 3-bit mantissa)",
+    range: {
+      min: -448,
+      max: 448,
+      minNormal: 0.015625,
+      maxNormal: 448,
+      smallestPositive: 0.001953125,
+      precision: 1 // decimal digits
+    }
   },
   nvfp4: {
     name: "NVFP4 (E2M1)",
@@ -61,7 +109,15 @@ export const FLOAT_FORMATS: Record<string, FloatFormat> = {
     exponentBits: 2,
     mantissaBits: 1,
     bias: 1,
-    description: "4-bit NVIDIA floating point"
+    description: "4-bit NVIDIA floating point",
+    range: {
+      min: -6,
+      max: 6,
+      minNormal: 1,
+      maxNormal: 6,
+      smallestPositive: 0.5,
+      precision: 1 // decimal digits
+    }
   }
 };
 
