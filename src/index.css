@@ -179,7 +179,7 @@
   /* S24 Ultra has specific safe areas and curved edges */
   --s24-safe-top: 44px;
   --s24-safe-bottom: 34px;
-  --s24-edge-margin: 20px; /* Increased from 8px for better edge spacing */
+  --s24-edge-margin: 16px; /* Reduced from 20px for better content space */
 }
 
 .samsung-s24-container {
@@ -213,7 +213,7 @@
 /* Android Tablet Layout */
 .android-tablet-layout {
   --tablet-max-width: 1200px;
-  --tablet-margin: 40px; /* Increased from 32px for better tablet spacing */
+  --tablet-margin: 36px; /* Reduced from 40px for better tablet content space */
 }
 
 .android-tablet-container {
@@ -229,7 +229,7 @@
 
 /* Android Phone Layout (Universal) */
 .android-phone-layout {
-  --phone-margin: 24px; /* Increased from 16px for better edge spacing */
+  --phone-margin: 20px; /* Reduced from 24px for better content space */
 }
 
 .android-phone-container {
@@ -239,24 +239,24 @@
 
 /* Screen size specific adjustments */
 .screen-small .android-phone-container {
-  --phone-margin: 20px; /* Increased from 12px for better spacing */
+  --phone-margin: 16px; /* Reduced from 20px for better spacing */
 }
 
 .screen-large .android-phone-container {
-  --phone-margin: 28px; /* Increased from 20px for better spacing */
+  --phone-margin: 24px; /* Reduced from 28px for better spacing */
   max-width: 640px;
   margin: 0 auto;
 }
 
 .screen-xlarge .android-phone-container {
-  --phone-margin: 32px; /* Increased from 24px for better spacing */
+  --phone-margin: 28px; /* Reduced from 32px for better spacing */
   max-width: 768px;
   margin: 0 auto;
 }
 
 /* Foldable Device Layout */
 .foldable-layout {
-  --foldable-margin: 28px; /* Increased from 20px for better foldable spacing */
+  --foldable-margin: 24px; /* Reduced from 28px for better foldable content space */
 }
 
 .foldable-container {
@@ -359,21 +359,21 @@
 /* Additional responsive margin adjustments for very small and very large screens */
 @media screen and (max-width: 320px) {
   .android-phone-container {
-    --phone-margin: 16px; /* Reduce margin on very small screens */
+    --phone-margin: 12px; /* Reduced from 16px for very small screens */
   }
   
   .samsung-s24-container {
-    --s24-edge-margin: 16px;
+    --s24-edge-margin: 12px;
   }
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .android-phone-container {
-    --phone-margin: 32px; /* Increase margin on larger phones */
+    --phone-margin: 28px; /* Reduced from 32px for larger phones */
   }
   
   .samsung-s24-container {
-    --s24-edge-margin: 24px;
+    --s24-edge-margin: 20px;
   }
 }
 
