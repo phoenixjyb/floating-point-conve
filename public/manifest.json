@@ -2,36 +2,36 @@
   "name": "Cool FP Converter",
   "short_name": "CoolFP",
   "description": "Convert between binary, hex, and decimal across multiple floating-point formats",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4338ca",
   "orientation": "portrait",
-  "scope": "/",
+  "scope": "./",
   "categories": ["utilities", "developer", "productivity"],
   "lang": "en-US",
   "dir": "ltr",
   "icons": [
     {
-      "src": "/icon.png",
+      "src": "./icon.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-192.png",
+      "src": "./icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "./icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "./apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
@@ -42,8 +42,8 @@
       "name": "Quick Convert",
       "short_name": "Convert",
       "description": "Start a new conversion",
-      "url": "/",
-      "icons": [{ "src": "/icon.svg", "sizes": "96x96" }]
+      "url": "./",
+      "icons": [{ "src": "./icon.svg", "sizes": "96x96" }]
     }
   ],
   "screenshots": [
