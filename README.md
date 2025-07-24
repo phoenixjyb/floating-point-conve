@@ -1,5 +1,11 @@
 # 🔢 Floating Point Converter
 
+<div align="center">
+  <img src="docs/screenshots/app-icon.png" alt="Floating Point Converter Icon" width="120" height="120"/>
+  <br/>
+  <em>Professional floating-point conversion and analysis tool</em>
+</div>
+
 A precision-engineered tool for converting between binary, hexadecimal, and decimal representations across multiple floating-point formats. Built for engineers, researchers, and students who need accurate floating-point analysis and IEEE 754 visualization.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
