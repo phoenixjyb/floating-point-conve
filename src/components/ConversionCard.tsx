@@ -160,6 +160,12 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               <div className="font-mono text-lg break-all">{binaryResult}</div>
             </div>
           )}
+          {decimalResult && binaryInput && (
+            <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
+              <div className="text-sm text-muted-foreground mb-1">Decimal Result:</div>
+              <div className="font-mono text-lg font-semibold text-accent-foreground">{decimalResult}</div>
+            </div>
+          )}
         </div>
 
         {/* Decimal to Binary */}
