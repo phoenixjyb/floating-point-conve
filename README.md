@@ -327,7 +327,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/phoenixjyb/floating-point-conve/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/phoenixjyb/floating-point-conve/discussions)
-- **Email**: [Your email]
+- **Email**: [yanbo.jia@cantab.net](mailto:yanbo.jia@cantab.net)
 
 ---
 
