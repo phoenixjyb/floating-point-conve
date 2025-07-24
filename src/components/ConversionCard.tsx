@@ -185,15 +185,16 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
   }, [format]); // Trigger when format changes
 
   return (
-    <Card>
+    <Card className="card-spacing-optimized">
       <CardHeader>
-        <CardTitle className="flex items-center justify-between">
+        <CardTitle className="flex items-center justify-between text-samsung-large">
           Format Converter
           <Button 
             variant="outline" 
             size="sm" 
             onClick={swapInputs}
             disabled={!binaryResult || !hexResult || !decimalResult}
+            className="button-enhanced tap-target"
           >
             <ArrowUpDown className="w-4 h-4" />
           </Button>
@@ -202,14 +203,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
       <CardContent className="space-y-6">
         {/* Binary Input */}
         <div className="space-y-2">
-          <Label htmlFor="binary-input">Binary Input</Label>
-          <div className="flex gap-2">
+          <Label htmlFor="binary-input" className="text-samsung-optimized font-medium">Binary Input</Label>
+          <div className="flex gap-3">
             <Input
               id="binary-input"
               placeholder={`Enter binary (max ${format.totalBits} bits)`}
               value={binaryInput}
               onChange={(e) => handleBinaryInputChange(e.target.value)}
-              className="font-mono text-base tap-target" 
+              className="font-mono text-samsung-optimized tap-target button-enhanced" 
               maxLength={format.totalBits}
               inputMode="numeric"
               pattern="[01]*"
@@ -219,14 +220,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
                 variant="outline"
                 size="sm"
                 onClick={() => copyToClipboard(binaryResult, "Binary")}
-                className="tap-target"
+                className="tap-target button-enhanced"
               >
-                <Copy className="w-4 h-4" />
+                <Copy className="w-5 h-5" />
               </Button>
             )}
           </div>
           {binaryError && (
-            <Badge variant="destructive" className="text-xs">
+            <Badge variant="destructive" className="text-sm">
               {binaryError}
             </Badge>
           )}
@@ -234,14 +235,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
 
         {/* Hexadecimal Input */}
         <div className="space-y-2">
-          <Label htmlFor="hex-input">Hexadecimal Input</Label>
-          <div className="flex gap-2">
+          <Label htmlFor="hex-input" className="text-samsung-optimized font-medium">Hexadecimal Input</Label>
+          <div className="flex gap-3">
             <Input
               id="hex-input"
               placeholder={`Enter hex (max ${Math.ceil(format.totalBits / 4)} digits)`}
               value={hexInput}
               onChange={(e) => handleHexInputChange(e.target.value)}
-              className="font-mono text-base tap-target"
+              className="font-mono text-samsung-optimized tap-target button-enhanced"
               maxLength={Math.ceil(format.totalBits / 4)}
               inputMode="text"
               pattern="[0-9A-Fa-f]*"
@@ -251,14 +252,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
                 variant="outline"
                 size="sm"
                 onClick={() => copyToClipboard(hexResult, "Hex")}
-                className="tap-target"
+                className="tap-target button-enhanced"
               >
-                <Copy className="w-4 h-4" />
+                <Copy className="w-5 h-5" />
               </Button>
             )}
           </div>
           {hexError && (
-            <Badge variant="destructive" className="text-xs">
+            <Badge variant="destructive" className="text-sm">
               {hexError}
             </Badge>
           )}
@@ -266,14 +267,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
 
         {/* Decimal Input */}
         <div className="space-y-2">
-          <Label htmlFor="decimal-input">Decimal Input</Label>
-          <div className="flex gap-2">
+          <Label htmlFor="decimal-input" className="text-samsung-optimized font-medium">Decimal Input</Label>
+          <div className="flex gap-3">
             <Input
               id="decimal-input"
               placeholder="Enter decimal number (or 'NaN', 'Infinity')"
               value={decimalInput}
               onChange={(e) => handleDecimalInputChange(e.target.value)}
-              className="font-mono text-base tap-target"
+              className="font-mono text-samsung-optimized tap-target button-enhanced"
               inputMode="decimal"
             />
             {decimalResult && (
@@ -281,14 +282,14 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
                 variant="outline"
                 size="sm"
                 onClick={() => copyToClipboard(decimalResult, "Decimal")}
-                className="tap-target"
+                className="tap-target button-enhanced"
               >
-                <Copy className="w-4 h-4" />
+                <Copy className="w-5 h-5" />
               </Button>
             )}
           </div>
           {decimalError && (
-            <Badge variant="destructive" className="text-xs">
+            <Badge variant="destructive" className="text-sm">
               {decimalError}
             </Badge>
           )}
@@ -297,39 +298,40 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
         {/* Results Display */}
         {(binaryResult || hexResult || decimalResult) && (
           <div className="space-y-4 pt-4 border-t">
-            <div className="text-sm font-medium">Conversion Results:</div>
+            <div className="text-samsung-optimized font-semibold">Conversion Results:</div>
             
             {binaryResult && (
-              <div className="p-3 bg-secondary rounded-lg">
-                <div className="text-sm text-muted-foreground mb-1">Binary:</div>
-                <div className="font-mono text-lg break-all">{binaryResult}</div>
+              <div className="p-4 bg-secondary rounded-lg">
+                <div className="text-sm text-muted-foreground mb-2">Binary:</div>
+                <div className="font-mono text-samsung-large break-all">{binaryResult}</div>
               </div>
             )}
             
             {hexResult && (
-              <div className="p-3 bg-muted rounded-lg">
-                <div className="text-sm text-muted-foreground mb-1">Hexadecimal:</div>
-                <div className="font-mono text-lg">{hexResult}</div>
+              <div className="p-4 bg-muted rounded-lg">
+                <div className="text-sm text-muted-foreground mb-2">Hexadecimal:</div>
+                <div className="font-mono text-samsung-large">{hexResult}</div>
               </div>
             )}
             
             {decimalResult && (
-              <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
-                <div className="text-sm text-muted-foreground mb-1">Decimal:</div>
-                <div className="font-mono text-lg font-semibold text-accent-foreground">{decimalResult}</div>
+              <div className="p-4 bg-accent/10 rounded-lg border border-accent/20">
+                <div className="text-sm text-muted-foreground mb-2">Decimal:</div>
+                <div className="font-mono text-samsung-large font-semibold text-accent-foreground">{decimalResult}</div>
               </div>
             )}
           </div>
         )}
 
         {/* Quick examples */}
-        <div className="space-y-2">
-          <div className="text-sm font-medium">Quick Examples:</div>
-          <div className="flex flex-wrap gap-2">
+        <div className="space-y-3">
+          <div className="text-samsung-optimized font-semibold">Quick Examples:</div>
+          <div className="grid grid-cols-3 gap-3">
             <Button
               variant="outline"
               size="sm"
               onClick={() => handleDecimalInputChange("1.0")}
+              className="button-enhanced tap-target text-samsung-optimized"
             >
               1.0
             </Button>
@@ -337,6 +339,7 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               variant="outline"
               size="sm"
               onClick={() => handleDecimalInputChange("-1.0")}
+              className="button-enhanced tap-target text-samsung-optimized"
             >
               -1.0
             </Button>
@@ -344,6 +347,7 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               variant="outline"
               size="sm"
               onClick={() => handleDecimalInputChange("0.5")}
+              className="button-enhanced tap-target text-samsung-optimized"
             >
               0.5
             </Button>
@@ -351,6 +355,7 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               variant="outline"
               size="sm"
               onClick={() => handleDecimalInputChange("Infinity")}
+              className="button-enhanced tap-target text-samsung-optimized"
             >
               ∞
             </Button>
@@ -358,8 +363,17 @@ export function ConversionCard({ format, onBinaryChange }: ConversionCardProps) 
               variant="outline"
               size="sm"
               onClick={() => handleDecimalInputChange("NaN")}
+              className="button-enhanced tap-target text-samsung-optimized"
             >
               NaN
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handleDecimalInputChange("3.14159")}
+              className="button-enhanced tap-target text-samsung-optimized"
+            >
+              π
             </Button>
           </div>
         </div>
